@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>login</title>
+		<style type="text/css" media="screen">
+			body {
+				background-color: cadetblue;
+			}
+			.login {
+				box-sizing: border-box;
+				border: 1px, solid, yellow;
+				border-radius: 4px, 8px;
+				border-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 align="center">Hello sir!</h1>
+		<form id="user" action="http://127.0.0.1:9090/user" method="post" accept-charset="utf-8">
+			<table class="login" border="1" cellspacing="0" width="80%" align="center">
+				<tr>
+					<td align="center">用户名</td>
+					<td>
+						<input type="text" name="username" value="" id="" placeholder="请输入合法的用户名..." />
+						用户名首字母以字母开始，并且长度为6~10
+					</td>
+				</tr>
+
+				<tr>
+					<td align="center">密码</td>
+					<td>
+						<input type="password" name="passwd" placeholder="请输入密码" />
+						密码长度不能为空长度为6~10
+					</td>
+				</tr>
+				<tr>
+					<td align="center">确认密码</td>
+					<td>
+						<input type="password" name="ppasswd" id="" placeholder="请输入确认密码" />
+						两次密码输入一致
+					</td>
+				</tr>
+				<tr>
+					<td align="center">邮箱</td>
+					<td>
+						<input type="text" name="Email" value="" id="" placeholder="请输入合法的邮箱名..." />
+						邮箱必须包含@
+					</td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+						<input type="submit" name="zhuce" value="Login" id="" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

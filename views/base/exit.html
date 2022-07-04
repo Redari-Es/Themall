@@ -1,0 +1,51 @@
+{{{if .Islogin}}}
+<!DOCTYPE html>
+<html>
+	<head>
+		{{{template "base/head.html" .
+
+
+
+
+
+
+
+
+
+		}}}
+		{{{template "base/table.html" .
+
+
+
+
+
+
+
+		}}}
+		<title>Exit</title>
+	</head>
+	<body>
+		{{{template "base/navbar.html" .}}}
+		<table align="center">
+			<tr>
+				<td colspan="2">
+					<h1>确认是否要退出 QaQ</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button><a href="/mall/exit" target="_self">确认退出该用户</a></button>
+				</td>
+				<td>
+					<button>
+						<a href="/mall" target="_self">返回主页面</a>
+					</button>
+				</td>
+			</tr>
+		</table>
+		{{{template "base/footer.html" .}}}
+	</body>
+</html>
+{{{else}}} {{{template "base/out.html" .}}}
+
+{{{end}}}

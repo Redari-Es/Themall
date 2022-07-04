@@ -1,0 +1,76 @@
+ *{  
+    margin: 0px;  
+    padding: 0px;
+	}
+.christ{
+	text-align: center;
+	justify-content: center;
+/* 	padding-top: 80px;
+ */}
+.christ-text{
+	padding-top: 20px;
+	text-align: center;
+}
+.christ-content{
+	padding-top: 30px;
+}
+.christmas{
+	text-align: center;
+	justify-content: center;
+	/* padding-top: 70px; */
+	
+}
+.christmas-text{
+	padding-top: 20px;
+	text-align: center;
+}
+.christmas-content{
+	padding-top: 30px;
+}
+.page-item{
+	text-align: center;
+	justify-content: center;
+}
+.page-item-text{
+	/* padding-top: 50px; */
+}
+.page-item__container{
+	/* padding-top: 20px; */
+}
+.textarea{
+	color: #51585E;
+	
+}
+.introduce_item_title {
+    display: flex; 
+	flex-direction: column; 
+	justify-content: center; 
+	text-align: center; 
+	font-size: 17px;
+	height: 100%
+}
+
+.introduce_item_titles {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    text-align: center; 
+	font-size: 17px;
+    height: 100%
+}
+.product{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+
+}
+.product-content{
+	padding-top: 50px;
+}
+.product-content1{
+	padding-top: 50px;
+}
+footer{
+	padding-top: 200px;
+}

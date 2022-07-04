@@ -1,0 +1,9 @@
+{{{if .Islogin}}}
+<!-- TODO: Islogin  <28-12-21, Redari-Es> -->
+{{{template "mall/mall.html" .}}}
+<!-- TODO: not login  <28-12-21, Redari-Es> -->
+{{{else}}} {{{if not .Islogin}}}
+<!-- TODO: notlogin  <28-12-21, Redari-Es> -->
+{{{template "mall/mall.html" .}}} {{{end}}}
+<!-- TODO: end  <28-12-21, Redari-Es> -->
+{{{end}}}

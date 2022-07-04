@@ -1,0 +1,90 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-color: #edd4d4c7;
+
+	/* TODO: 颜色  <24-12-21, Redari-Es> */
+	/*  
+	#e2ada5
+	#627c96
+	#edd4d4c7
+	#ac869f
+	#abbecc
+	#dd8e8e
+	#0f121b
+	#2b4465
+*/
+}
+.navbar {
+	border-radius: 8px;
+}
+.christ {
+	text-align: center;
+	justify-content: center;
+}
+.christ-text {
+	padding-top: 20px;
+	text-align: center;
+}
+.christ-content {
+	padding-top: 30px;
+}
+.christmas {
+	text-align: center;
+	justify-content: center;
+}
+.christmas-text {
+	padding-top: 20px;
+	text-align: center;
+}
+.christmas-content {
+	padding-top: 30px;
+}
+.page-item {
+	text-align: center;
+	justify-content: center;
+}
+.page-item-text {
+	/* padding-top: 50px; */
+}
+.page-item__container {
+	/* padding-top: 20px; */
+}
+.textarea {
+	color: #51585e;
+}
+.introduce_item_title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	font-size: 17px;
+	height: 100%;
+}
+
+.introduce_item_titles {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	font-size: 17px;
+	height: 100%;
+}
+.product {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+}
+.product-content {
+	padding-top: 50px;
+}
+.product-content1 {
+	padding-top: 50px;
+}
+footer {
+	padding-top: 200px;
+	padding: 20px;
+}

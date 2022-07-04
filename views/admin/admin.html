@@ -1,0 +1,122 @@
+{{{if .Islogin}}}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Hello {{{.username}}}</title>
+		{{{template "base/link.html" .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		}}}
+		<style type="text/css" media="screen"></style>
+		<style type="text/css" media="screen">
+			table {
+				text-align: center;
+				height: 60vh;
+				font-size: 20px;
+
+				color: black;
+				box-sizing: border-box;
+				border: solid 2px;
+				border-color: black;
+				border-radius: 4px 8px grey;
+			}
+			table tr {
+				height: 10vh;
+				border: solid 2px;
+				border-color: black;
+			}
+			table tr td {
+				border: solid 2px;
+				border-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		{{{template "base/navbar.html" .}}}
+		<table>
+			<tr>
+				<td align="center" colspan="2">
+					<h1>Welcome!!! {{{.username}}}</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>Id编号</td>
+				<td>{{{.id}}}</td>
+			</tr>
+			<tr>
+				<td>Uid编号</td>
+				<td>{{{.uid}}}</td>
+			</tr>
+			<tr>
+				<td>用户名</td>
+				<td>{{{.name}}}</td>
+			</tr>
+			<tr>
+				<td>邮箱</td>
+				<td>{{{.email}}}</td>
+			</tr>
+			<tr>
+				<td>密码已加密</td>
+				<td>{{{.pwd}}}</td>
+			</tr>
+			<tr>
+				<td>性别</td>
+				<td>{{{.gender}}}</td>
+			</tr>
+			<tr>
+				<td>电话</td>
+				<td>{{{.phone}}}</td>
+			</tr>
+			<tr>
+				<td>权限</td>
+				<td>{{{.role}}}</td>
+			</tr>
+			<tr>
+				<td>创建时间</td>
+				<td>{{{.created}}}</td>
+			</tr>
+			<tr>
+				<td>上次更新时间</td>
+				<td>{{{.updated}}}</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button><a href="{{{.loginuser}}}/exit">退出</a></button>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2">{{{.errmsg}}}</td>
+			</tr>
+		</table>
+		{{{template "base/footer.html" .}}} {{{template "base/src.html" .}}}
+	</body>
+</html>
+{{{else}}}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>mall</title>
+	</head>
+	<body>
+		<a href="login" target="_self">重新登录</a>
+		{{{.errmsg}}}
+	</body>
+</html>
+{{{end}}}

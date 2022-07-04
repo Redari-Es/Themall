@@ -1,0 +1,114 @@
+			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 1500px;">
+
+			  <div class="offcanvas-header">
+			    <h5 class="offcanvas-title" id="offcanvasExampleLabel">购物车</h5>
+			    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			  </div>
+
+			  <div class="offcanvas-body"  id="menu">
+					<div class="list">
+						<h3>商品列表</h3>
+						<ul class="goods">
+							<li>
+								<img src="/static/mall/pic/5.jpg" style="width: 218px;height: 218px;">
+								<p class="desc">精选彩妆</p>
+								<p class="price">&yen;1999</p>
+								<a href="javascript:void(0)" class="buy" data-pid="p001">购买</a>
+							</li>
+							<li>
+								<img src="/static/mall/pic/5.jpg" style="width: 218px;height: 218px;">
+								<p class="desc">精选口红</p>
+								<p class="price">&yen;2999</p>
+								<a href="javascript:void(0)" class="buy" data-pid="p002">购买</a>
+							</li>
+							<li>
+								<img src="/static/mall/pic/5.jpg" style="width: 218px;height: 218px;">
+								<p class="desc">精选眼影</p>
+								<p class="price">&yen;3999</p>
+								<a href="javascript:void(0)" class="buy" data-pid="p003">购买</a>
+							</li>
+							<li>
+								<img src="/static/mall/pic/5.jpg" style="width: 218px;height: 218px;">
+								<p class="desc">精选粉底液</p>
+								<p class="price">&yen;4999</p>
+								<a href="javascript:void(0)" class="buy" data-pid="p004">购买</a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="cart">
+						<h3 class="title">购物车详情</h3>
+						<table>
+							<thead>
+								<tr>
+									<td>
+										<span class="ischecked chked glyphicon glyphicon-check"></span>
+										<span class="ischecked unchked glyphicon glyphicon-unchecked"></span>
+										<input type="checkbox" id="selAll" checked="checked">全选
+									</td>
+									<td>商品信息</td>
+									<td>单价（元）</td>
+									<td>数量</td>
+									<td>小计（元）</td>
+									<td>操作</td>
+								</tr>
+							</thead>
+							
+							<tr data-pid="p001">
+								<td>
+									<span class="ischecked chked glyphicon glyphicon-check"></span>
+									<span class="ischecked unchked glyphicon glyphicon-unchecked"></span>
+									<input type="checkbox" class="pid" checked="checked">
+								</td>
+								<td>
+									<img src="/static/mall/pic/5.jpg" >
+									<span class="pname">精选彩妆</span>
+								</td>
+								<td class="price">&yen;1999</td>
+								<td>
+									<button class="sub">-</button>
+									<input type="text" class="number" value="1"/>
+									<button class="add">+</button>
+								</td>
+								<td class="count">&yen;7999</td>
+								<td><a href="javascript:void(0)" class="del">删除</a></td>
+							</tr>
+							<template id="temp">
+								<tr data-pid="{{pid}}">
+									<td>
+										<span class="ischecked chked glyphicon glyphicon-check"></span>
+										<span class="ischecked unchked glyphicon glyphicon-unchecked"></span>
+										<input type="checkbox" class="pid" checked="checked">
+									</td>
+									<td>
+										<img src="{{src}}" >
+										<span class="pname">{{pname}}</span>
+									</td>
+									<td class="price">&yen;{{price}}</td>
+									<td>
+										<button class="sub">-</button>
+										<input type="text" class="number" value="1"/>
+										<button class="add">+</button>
+									</td>
+									<td class="count">&yen;{{price}}</td>
+									<td><a href="javascript:void(0)" class="del">删除</a></td>
+								</tr>
+							</template>
+						</table>
+						<div class="orders-total">
+							<p>共<span class="total">1</span>件商品
+							总金额
+							<span class="total-money">&yen;7999</span>
+							</p>
+							
+							<div class="checkout">
+								别再犹豫了
+								<a href="javascript:void(0)" id="to-checkout">
+									立即购买
+								</a>
+							</div>
+						</div>
+					</div>
+			    </div>
+			  </div>
+			</div>

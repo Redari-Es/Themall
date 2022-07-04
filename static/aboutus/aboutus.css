@@ -1,0 +1,13 @@
+﻿* {
+	padding: 0px;
+	margin: 0px;
+}
+#group {
+	position: relative;
+	left: 40px;
+	top: 4px;
+}
+.line {
+	width: 80%;
+	border: solid 6px;
+}

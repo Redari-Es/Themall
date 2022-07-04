@@ -1,0 +1,85 @@
+	<div class="container">
+		<!-- logo -->
+		<div class="row" ><!-- hidden-xs -->
+			<div class="col-xs-5 col-md-5 col-lg-5">
+							<!-- <img src="pic/logo.png" > -->
+			{{{if .Islogin}}}
+				<a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+				  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+				    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+				  </svg></i>
+				</a>
+				
+			{{{end}}}
+				<!-- TODO: cart  <23-12-21, Redari-Es> -->
+				<!-- TODO: test  <23-12-21, Redari-Es> -->
+				{{{template "base/cart.html" .}}}
+			<!-- TODO: nav  <23-12-21, Redari-Es> -->
+
+			   
+			<div class="col-xs-5 col-md-4 col-lg-4" style="padding-top: 10px;">
+				<!-- <img src="pic/logo.png"  style="height: 30px;"> -->
+				<strong>EIGHT</strong>
+				<br>
+				<br>
+			</div>
+			<div class="col-xs-1 col-md-1 col-lg-1 hidden-xs" >
+				<!-- TODO: 爱心  <23-12-21, Redari-Es> -->
+				<a class="btn" href="{{{.love}}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart" viewBox="0 0 16 16">
+  <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+</svg></a>
+			</div>
+			<div class="col-xs-1 col-md-1 col-lg-1 hidden-xs" >
+				<!-- TODO: 客服  <23-12-21, Redari-Es> -->
+				<a class="btn" href="{{{.contact}}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+			  <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+			</svg></a>
+			</div>
+			<div class="col-xs-1 col-md-1 col-lg-1">
+				<!-- TODO: 登录注册  <23-12-21, Redari-Es> -->
+				<!-- TODO: Something  <24-12-21, Redari-Es> -->
+				<a class="btn" href="{{{.login}}}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+			    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+			    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+			  </svg></a>
+			</div>
+		</div>	
+			<!-- 菜单栏 -->
+			<div class="row">
+			<!-- 滚动监听 -->
+			<nav id="navbar-example2" class="navbar navbar-expand-lg navbar-light bg-light">
+			  <a class="navbar-brand col-xs-10 col-md-1" href="#footer" >Eight</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse col-xs-2 col-md-1 " id="navbarSupportedContent">
+				  <ul class="nav navbar-nav col-lg-12">
+						<!-- TODO: 模板  <24-12-21, Redari-Es> -->
+				    <li class="nav-item col-lg-2">
+				      <a class="nav-link" align="center" href="/mall">首页<span class="sr-only"></span></a>
+				    </li>
+				    <li class="nav-item col-lg-3">
+							<a class="nav-link" align="center" href="{{{.about}}}">关于我们</a>
+				    </li>
+					<li class="nav-item col-lg-3">
+					  <a class="nav-link" align="center" href="{{{.jingxuan}}}">精选好礼</a>
+					</li>
+					<li class="nav-item col-lg-3">
+						<a class="nav-link" align="center" href="{{{.dacu}}}">大促销</a>
+					</li>
+				    <li class="nav-item dropdown">
+				      <a class="nav-link dropdown-toggle" data-toggle="dropdown" align="ceter" href="#product" role="button" aria-expanded="false">彩妆</a>
+				      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="{{{.one}}}">口红</a>
+				        <div role="separator" class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{{{.two}}}">粉底液</a>
+				        <div role="separator" class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{{{.three}}}">眼影</a>
+				      </div>
+				    </li>
+					</ul>
+				</div>
+			</nav>
+	</div>
+

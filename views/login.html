@@ -1,0 +1,42 @@
+{{{if .Islogin}}}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Hello {{{.username}}}</title>
+		{{{template "base/link.html" .
+
+		}}}
+		{{{template "base/table.html" .
+
+		}}}
+	</head>
+	<body>
+		{{{template "base/navbar.html" .}}}
+		<table border="1" cellpadding="0" align="center" width="80%">
+			<tr>
+				<td align="center" colspan="2">
+					<h1>Welcome!!! {{{.username}}}</h1>
+				</td>
+			</tr>
+			<tr>
+				<td>用户名</td>
+				<td>{{{.username}}}</td>
+			</tr>
+			<tr>
+				<td>邮箱</td>
+				<td>{{{.email}}}</td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td>{{{.passwd}}}</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2">{{{.errmsg}}}</td>
+			</tr>
+		</table>
+		{{{template "base/footer.html" .}}} {{{template "base/src.html" .}}}
+	</body>
+</html>
+{{{end}}}

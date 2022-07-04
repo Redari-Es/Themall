@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1, maximum-scale=1"/>
+    <title>毕业设计</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="index.css" />
+	<link rel="stylesheet" type="text/css" href="font.css"/>
+	<link rel="stylesheet" type="text/css" href="index1.css"/>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+</head>
+<body>
+	<div class="container">
+		<!-- logo -->
+		<div class="row " ><!-- hidden-xs -->
+			<div class="col-xs-5 col-md-5 col-lg-5">
+							<!-- <img src="pic/logo.png" > -->
+				<a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+				  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+				    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+				  </svg></i>
+				</a>
+			<div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 1500px;">
+			  <div class="offcanvas-header">
+			    <h5 class="offcanvas-title" id="offcanvasExampleLabel">购物车</h5>
+			    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			  </div>
+			  <div class="offcanvas-body"  id="menu">
+
+					<div class="list">
+						<h3>商品列表</h3>
+						<ul class="goods">
+							<li>
+								<img src="./pic/5.jpg" style="width: 218px;height: 218px;">
+								<p class="desc">精选粉底液</p>
+								<p class="price">&yen;1999</p>
+								<a href="javascript:void(0)" class="buy" data-pid="p001">购买</a>
+							</li>
+							<li>
+								<img src="./pic/5.jpg" style="width: 218px;height: 218px;">
+								<p class="desc">精选粉底液</p>
+								<p class="price">&yen;2999</p>
+								<a href="javascript:void(0)" class="buy" data-pid="p002">购买</a>
+							</li>
+							<li>
+								<img src="./pic/5.jpg" style="width: 218px;height: 218px;">
+								<p class="desc">精选粉底液</p>
+								<p class="price">&yen;3999</p>
+								<a href="javascript:void(0)" class="buy" data-pid="p003">购买</a>
+							</li>
+							<li>
+								<img src="./pic/5.jpg" style="width: 218px;height: 218px;">
+								<p class="desc">精选粉底液</p>
+								<p class="price">&yen;4999</p>
+								<a href="javascript:void(0)" class="buy" data-pid="p004">购买</a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="cart">
+						<h3 class="title">购物车详情</h3>
+						<table>
+							<thead>
+								<tr>
+									<td>
+										<span class="ischecked chked glyphicon glyphicon-check"></span>
+										<span class="ischecked unchked glyphicon glyphicon-unchecked"></span>
+										<input type="checkbox" id="selAll" checked="checked">全选
+									</td>
+									<td>商品信息</td>
+									<td>单价（元）</td>
+									<td>数量</td>
+									<td>小计（元）</td>
+									<td>操作</td>
+								</tr>
+							</thead>
+							
+							<tr data-pid="p001">
+								<td>
+									<span class="ischecked chked glyphicon glyphicon-check"></span>
+									<span class="ischecked unchked glyphicon glyphicon-unchecked"></span>
+									<input type="checkbox" class="pid" checked="checked">
+								</td>
+								<td>
+									<img src="./pic/5.jpg" >
+									<span class="pname">精选彩妆</span>
+								</td>
+								<td class="price">&yen;1999</td>
+								<td>
+									<button class="sub">-</button>
+									<input type="text" class="number" value="1"/>
+									<button class="add">+</button>
+								</td>
+								<td class="count">&yen;7999</td>
+								<td><a href="javascript:void(0)" class="del">删除</a></td>
+							</tr>
+							<template id="temp">
+								<tr data-pid="{{pid}}">
+									<td>
+										<span class="ischecked chked glyphicon glyphicon-check"></span>
+										<span class="ischecked unchked glyphicon glyphicon-unchecked"></span>
+										<input type="checkbox" class="pid" checked="checked">
+									</td>
+									<td>
+										<img src="{{src}}" >
+										<span class="pname">{{pname}}</span>
+									</td>
+									<td class="price">&yen;{{price}}</td>
+									<td>
+										<button class="sub">-</button>
+										<input type="text" class="number" value="1"/>
+										<button class="add">+</button>
+									</td>
+									<td class="count">&yen;{{price}}</td>
+									<td><a href="javascript:void(0)" class="del">删除</a></td>
+								</tr>
+							</template>
+						</table>
+						<div class="orders-total">
+							<p>共<span class="total">1</span>件商品
+							总金额
+							<span class="total-money">&yen;7999</span>
+							</p>
+							
+							<div class="checkout">
+								别再犹豫了
+								<a href="javascript:void(0)" id="to-checkout">
+									立即购买
+								</a>
+							</div>
+						</div>
+					</div>
+			    </div>
+			  </div>
+			</div>
+			   
+			<div class="col-xs-5 col-md-4 col-lg-4"  style="padding-top: 10px;">
+				<!-- <img src="pic/logo.png"  style="height: 30px;"> -->
+				<strong>EIGHT</strong>
+			</div>
+			<div class="col-xs-1 col-md-1 col-lg-1 hidden-xs" >
+				<a class="btn" href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-heart" viewBox="0 0 16 16">
+  <path d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595L8 6.236zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.55 7.55 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"/>
+</svg></a>
+			</div>
+			<div class="col-xs-1 col-md-1 col-lg-1 hidden-xs" >
+				<a class="btn" href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+			  <path d="M8 1a5 5 0 0 0-5 5v1h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a6 6 0 1 1 12 0v6a2.5 2.5 0 0 1-2.5 2.5H9.366a1 1 0 0 1-.866.5h-1a1 1 0 1 1 0-2h1a1 1 0 0 1 .866.5H11.5A1.5 1.5 0 0 0 13 12h-1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h1V6a5 5 0 0 0-5-5z"/>
+			</svg></a>
+			</div>
+			<div class="col-xs-1 col-md-1 col-lg-1" ">
+			<a class="btn" href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-headset" viewBox="0 0 16 16">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+			    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+			    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+			  </svg></a>
+			</div>
+		</div>	
+			<!-- 菜单栏 -->
+			<div class="row">
+			<!-- 滚动监听 -->
+			<nav id="navbar-example2" class="navbar navbar-expand-lg navbar-light bg-light">
+			  <a class="navbar-brand col-xs-10 col-md-1" href="#" >Eight</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse col-xs-2 col-md-1 " id="navbarSupportedContent">
+				  <ul class="nav navbar-nav col-lg-12">
+				    <li class="nav-item col-lg-2">
+				      <a class="nav-link" href="#">首页<span class="sr-only"></span></a>
+				    </li>
+				    <li class="nav-item col-lg-3">
+				      <a class="nav-link" href="#">关于我们</a>
+				    </li>
+					<li class="nav-item col-lg-3">
+					  <a class="nav-link" href="#jingxuan">精选好礼</a>
+					</li>
+					<li class="nav-item col-lg-3">
+					  <a class="nav-link" href="#dacu">大促销</a>
+					</li>
+				    <li class="nav-item dropdown">
+				      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">彩妆</a>
+				      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				        <a class="dropdown-item" href="#one">口红</a>
+				        <a class="dropdown-item" href="#two">粉底液</a>
+				        <div role="separator" class="dropdown-divider"></div>
+				        <a class="dropdown-item" href="#three">眼影</a>
+				      </div>
+				    </li>
+				  </ul>
+			  </div>
+			</nav>
+	</div>
+
+		<!-- 轮播图片 -->
+		<div >
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+			  </ol>
+			
+			  <!-- Wrapper for slides -->
+			  <div class="carousel-inner" role="listbox">
+			    <div class="item active">
+			      <img src="./pic/1-cover-intro-image-text_1440_1200.webp.jpg" alt="">
+			      <div class="carousel-caption">
+					  DIOR<br />
+			        圣诞彩妆限定系列
+			      </div>
+			    </div>
+			    <div class="item">
+			      <img src="./pic/20211210_214549_003.jpg" alt="">
+			      <div class="carousel-caption">
+					  DIOR<br />
+			        圣诞彩妆限定系列
+			      </div>
+			    </div>
+				<div class="item">
+				  <img src="./pic/20211210_214549_005.jpg" alt="">
+				  <div class="carousel-caption">
+					  DIOR<br />
+				    圣诞彩妆限定系列
+				  </div>
+				</div>
+				<div class="item">
+				  <img src="./pic/20211210_214549_003.jpg" alt="">
+				  <div class="carousel-caption">
+					  DIOR<br />
+				    圣诞彩妆限定系列
+				  </div>
+				</div>
+			  </div>
+			
+			  <!-- Controls -->
+			  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div>
+		
+		<!-- 卡片1 -->
+		<div class=" christ" id="jingxuan" >
+			<div class="christ-text row-cols-1 container-fluid">
+				<h4 style="">圣诞精选好礼</h4>
+			</div>
+			<div class="christ-content row container-fluid">
+				<div class="col-sm-4 col-xs-12">
+				  <div class="car" style="color: black;">
+							  <img src="./pic/1.jpg"  class="card-img-top img-responsive"/>
+				    <div class="card-body">
+					  <h6 class="card-title">Special title </h6>
+				      <h6 class="card-text">With supporting text below as a natural lead-in to additional content.</h6>
+				      <a href="#" class="btn btn-dark">Go SHOOPING</a>
+				    </div>
+				  </div>
+				</div>
+				<div class="col-sm-4 col-xs-12">
+				  <div class="car"  style="color: black;">
+							  <img src="./pic/4.jpg"  class="card-img-top img-responsive" />
+				    <div class="card-body">
+				      <h6 class="card-title">Special title </h6>
+				      <h6 class="card-text">With supporting text below as a natural lead-in to additional content.</h6>
+				      <a href="#" class="btn btn-dark">Go SHOOPING</a>
+				    </div>
+				  </div>
+				</div>
+				<div class="col-sm-4 col-xs-12">
+				  <div class="car"  style="color: black;">
+							  <img src="./pic/3.jpg"  class="card-img-top img-responsive"/>
+				    <div class="card-body">
+				      <h6 class="card-title">Special title </h6>
+				      <h6 class="card-text">With supporting text below as a natural lead-in to additional content.</h6>
+				      <a href="#" class="btn btn-dark">Go SHOOPING</a>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<div class="christmas" id="dacu" style="padding-top:60px;">
+			<div class="christmas-text row-cols-1 container-fluid">
+				<h4 style="">圣诞大促销</h4>
+			</div>
+			<div class="christmas-content row container-fluid">
+				<div class="col-sm-4 col-xs-12">
+				  <div class="car" style="color: black;">
+							  <img src="./pic/5.jpg"  class="card-img-top img-responsive" />
+				    <div class="card-body">
+				      <h6 class="card-title">Special</h6>
+				      <h6 class="card-text">With supporting text below as a natural lead-in to additional content.</h6>
+				      <a href="#" class="btn btn-dark">Go SHOOPING</a>
+				    </div>
+				  </div>
+				</div>
+				<div class="col-sm-4 col-xs-12">
+				  <div class="car"  style="color: black;">
+							  <img src="./pic/6.jpg"  class="card-img-top img-responsive" />
+				    <div class="card-body">
+				      <h6 class="card-title">Special title </h6>
+				      <h6 class="card-text">With supporting text below as a natural lead-in to additional content.</h6>
+				      <a href="#" class="btn btn-dark">Go SHOOPING</a>
+				    </div>
+				  </div>
+				</div>
+				<div class="col-sm-4 col-xs-12">
+				  <div class="car"  style="color: black;">
+							  <img src="./pic/2.jpg"  class="card-img-top img-responsive" />
+				    <div class="card-body">
+				      <h6 class="card-title">Special title </h6>
+				      <h6 class="card-text">With supporting text below as a natural lead-in to additional content.</h6>
+				      <a href="#" class="btn btn-dark">Go SHOOPING</a>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<!-- 口红大图 -->
+		<div class="row page-item" id="one" style="padding-top:60px">
+			<div class="page-item-text">
+				<h2>口红精选</h2>
+			</div>
+			<div class="page-item__container ">
+				<div class="image">
+					<img src="pic/20211210_214549_003.jpg" style="width:95%;">
+				</div>
+				<div  class="textarea container-fluid">
+					<h6>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。
+					</h6>
+				</div>
+			</div>
+		</div>
+		<!-- 口红产品种类 -->
+		<div class="product">
+			<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+				<div class="product-content row">
+					<div class="col-sm-8 col-lg-8" >
+						<img class="introduce_item_img" src="./pic/0.jpg" alt="" style="width:90%">
+					</div>
+					<div class="col-sm-4  col-lg-4">
+					    <span class="introduce_item_title"><h5>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。</h5><br>
+						<a href="#" class="btn btn-dark">立即购买</a>
+						</span>
+					</div>
+				</div>	
+				<div class="product-content1 row hidden-xs">
+					<div class="col-sm-4  col-lg-4">
+					    <span class="introduce_item_title"><h5>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。</h5><br>
+						<a href="#" class="btn btn-dark">立即购买</a>
+						</span>
+					</div>
+					<div class="col-sm-8  col-lg-8" >
+						<img class="introduce_item_img" src="./pic/0.jpg" alt="" style="width:90%">
+					</div>
+				</div>
+				<div class="product-content row">
+					<div class="col-sm-8 col-lg-8" >
+						<img class="introduce_item_img" src="./pic/0.jpg" alt="" style="width:90%">
+					</div>
+					<div class="col-sm-4 col-lg-4">
+					    <span class="introduce_item_title"><h5>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。</h5><br>
+						<a href="#" class="btn btn-dark">立即购买</a>
+						</span>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		<!-- 粉底液大图 -->
+		<div class="page-item" id="two"  style="padding-top:60px">
+			<div class="page-item-text">
+				<h2>粉底液精选</h2>
+			</div>
+			<div class="page-item__container ">
+				<div class="image">
+					<img src="pic/20211210_214549_003.jpg" style="width:97%;">
+				</div>
+				<div  class="textarea container-fluid">
+					<h6>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。
+					</h6>
+				</div>
+			</div>
+		</div>
+		<!-- 粉底液产品分类 -->
+		<div class="product">
+			<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+				<div class="product-content row">
+					<div class="col-sm-8 col-lg-8" >
+						<img class="introduce_item_img" src="./pic/0.jpg" alt="" style="width:95%">
+					</div>
+					<div class="col-sm-4 col-lg-4">
+					    <span class="introduce_item_title"><h5>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。</h5><br>
+						<a href="#" class="btn btn-dark">立即购买</a>
+						</span>
+					</div>
+				</div>
+				<div class="product-content1 row hidden-xs">
+					<div class="col-sm-4 col-lg-4">
+					    <span class="introduce_item_title"><h5>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。</h5><br>
+						<a href="#" class="btn btn-dark">立即购买</a>
+						</span>
+					</div>
+					<div class="col-sm-8 col-lg-8" >
+						<img class="introduce_item_img" src="./pic/0.jpg" alt="" style="width:95%">
+					</div>
+				</div>
+				<div class="product-content row">
+					<div class="col-sm-8 col-lg-8" >
+						<img class="introduce_item_img" src="./pic/0.jpg" alt="" style="width:95%">
+					</div>
+					<div class="col-sm-4 col-lg-4">
+					    <span class="introduce_item_title"><h5>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。</h5><br>
+						<a href="#" class="btn btn-dark">立即购买</a>
+						</span>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		<!-- 眼影大图 -->
+		<div class="page-item" id="three" style="padding-top:60px">
+			<div class="page-item-text">
+				<h2>眼影精选</h2>
+			</div>
+			<div class="page-item__container ">
+				<div class="image">
+					<img src="pic/20211210_214549_003.jpg" style="width:97%;">
+				</div>
+				<div  class="textarea container-fluid">
+					<h6>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。
+					</h6>
+				</div>
+			</div>
+		</div>
+		<!-- 眼影产品分类 -->
+		<div class="product">
+			<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+				<div class="product-content row">
+					<div class="col-sm-8 col-lg-8" >
+						<img class="introduce_item_img" src="./pic/0.jpg" alt="" style="width:95%">
+					</div>
+					<div class="col-sm-4 col-lg-4">
+					    <span class="introduce_item_title"><h5>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。</h5><br>
+						<a href="#" class="btn btn-dark">立即购买</a>
+						</span>
+					</div>
+				</div>	
+				<div class="product-content1 row hidden-xs">
+					<div class="col-sm-4 col-lg-4">
+					    <span class="introduce_item_title"><h5>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。</h5><br>
+						<a href="#" class="btn btn-dark">立即购买</a>
+						</span>
+					</div>
+					<div class="col-sm-8 col-lg-8" >
+						<img class="introduce_item_img" src="./pic/0.jpg" alt="" style="width:95%">
+					</div>
+				</div>
+				<div class="product-content row">
+					<div class="col-sm-8 col-lg-8" >
+						<img class="introduce_item_img" src="./pic/0.jpg" alt="" style="width:95%">
+					</div>
+					<div class="col-sm-4 col-lg-4">
+					    <span class="introduce_item_title"><h5>DIOR迪奥彩妆创意与形象总监彼得·菲利普(Peter Philips) ，以品牌高订时装屋所在地，巴黎蒙田大道30号建筑外观设计为灵感，打造节日彩妆系列，致敬经典传奇。</h5><br>
+						<a href="#" class="btn btn-primary">立即购买</a>
+						</span>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		
+			<!-- 页脚 -->
+			<footer class="container-1 py-5">
+			  <div class="row">
+			    <div class="col-12 col-md">
+			      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+			      <small class="d-block mb-3 text-muted">&copy; 2017-2021</small>
+			    </div>
+			    <div class="col-6 col-md">
+			      <h5>Features</h5>
+			      <ul class="list-unstyled text-small">
+			        <li><a class="text-muted" href="#">Cool stuff</a></li>
+			        <li><a class="text-muted" href="#">Random feature</a></li>
+			        <li><a class="text-muted" href="#">Team feature</a></li>
+			        <li><a class="text-muted" href="#">Stuff for developers</a></li>
+			        <li><a class="text-muted" href="#">Another one</a></li>
+			        <li><a class="text-muted" href="#">Last time</a></li>
+			      </ul>
+			    </div>
+			    <div class="col-6 col-md">
+			      <h5>Resources</h5>
+			      <ul class="list-unstyled text-small">
+			        <li><a class="text-muted" href="#">Resource</a></li>
+			        <li><a class="text-muted" href="#">Resource name</a></li>
+			        <li><a class="text-muted" href="#">Another resource</a></li>
+			        <li><a class="text-muted" href="#">Final resource</a></li>
+			      </ul>
+			    </div>
+			    <div class="col-6 col-md">
+			      <h5>Resources</h5>
+			      <ul class="list-unstyled text-small">
+			        <li><a class="text-muted" href="#">Business</a></li>
+			        <li><a class="text-muted" href="#">Education</a></li>
+			        <li><a class="text-muted" href="#">Government</a></li>
+			        <li><a class="text-muted" href="#">Gaming</a></li>
+			      </ul>
+			    </div>
+			    <div class="col-6 col-md">
+			      <h5>About</h5>
+			      <ul class="list-unstyled text-small">
+			        <li><a class="text-muted" href="#">Team</a></li>
+			        <li><a class="text-muted" href="#">Locations</a></li>
+			        <li><a class="text-muted" href="#">Privacy</a></li>
+			        <li><a class="text-muted" href="#">Terms</a></li>
+			      </ul>
+			    </div>
+			  </div>
+			</footer>
+			
+			
+			<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+			<script type="text/javascript">
+				//定义存储数据的容器
+				var datas = {
+					p001:{pname:'精选粉底液',price:1999,src:'./pic/5.jpg'},
+					p002:{pname:'精选口红',price:2999,src:'./pic/5.jpg'},
+					p003:{pname:'精选眼影',price:3999,src:'./pic/5.jpg'},
+					p004:{pname:'限时优惠',price:4999,src:'./pic/5.jpg'}
+				}
+				//点击购买
+				$('.buy').click(function(){
+					//获取data-pid属性的值
+					var pid = $(this).attr('data-pid');
+					//点击某个数据的详细信息
+					var info = datas[pid];
+					//判断是否存在   默认不存在
+					var isExist = false;
+					//遍历
+					var index = 0;   //匹配数据䣌索引
+					
+					$('tbody>tr').each(function(idx,ele){
+						//判断
+						if(pid==$(ele).attr('data-pid')){
+							//有重复的
+							isExist=true;
+							index = idx;
+						}
+					})
+					//alert(isExist)
+					if(isExist){
+						//触发某个重复元素的+号的点击事件   gt  大于索引  lt    trigger触发器
+						$('tbody>tr').eq(index).find('.add').trigger('click');
+					}else{
+						//判断没有重复数据䣌
+						var html1 = $('#temp').html();
+						//替换值
+						html1 = html1.replace('{{pid}}',pid);
+						html1 = html1.replace('{{src}}',info.src);
+						html1 = html1.replace('{{price}}',info.price);
+						html1 = html1.replace('{{price}}',info.price);
+						html1 = html1.replace('{{pname}}',info.pname);
+						//拼接
+						$('tbody').append($(html1));
+					}
+					TotalPrice();
+				})
+				
+				
+				//删除
+				/* $('table').on('click','.del',delete);
+				function delete(){
+					
+				} */
+				$('table').on('click','.del',function(){
+					//弹框  提醒是否删除
+					var flag=confirm('东西这么六币  不要了吗？');
+					if(flag){
+						$(this).parent().parent().remove();
+					}
+					TotalPrice();
+				});
+				
+				//3  计算数量和总价
+				function TotalPrice(){
+					var sum = 0;  //总价的变量
+					var count = 0; //数量变量
+					//遍历
+					$('tbody>tr').each(function(idx,ele){
+						//判断框是否被选中
+						var flag = $(ele).find('.pid')[0].checked;
+						//alert(flag);
+						if(flag){
+							sum +=parseInt($(ele).find('.count').html().substring(1));
+							count+= parseInt($(ele).find('.number').val());
+						}
+					})
+					//赋值
+					$('.total-money').html('&yen;'+sum);
+					$('.total').html(count);
+				}
+				
+				//减法
+				$('table').on('click','.sub',function(){
+					//得到input元素里的值
+					var num = $(this).next().val();
+					if(num==1){
+						//判断删除
+						var flag=confirm('东西这么六币  不要了吗？');
+						if(flag){
+							$(this).parent().parent().remove();
+						}
+					}else{
+						num--;
+						//更新赋值
+						$(this).next().val(num);
+						//单价  price
+						var price = $(this).parent().siblings('.price').html().substring(1);
+						var result = calPrice(num,price);
+						//更新赋值
+						$(this).parent().next().html('&yen;'+result);
+					}
+					TotalPrice();
+				})
+				//小计
+				function calPrice(num,price){
+					return num*price;
+				}
+				
+				//加法
+				$('table').on('click','.add',function(){
+					var num = $(this).prev().val();
+					num++;
+					//更新赋值
+					$(this).prev().val(num);
+					var price = $(this).parent().prev().html().substring(1);
+					//小计
+					var result = calPrice(num,price);
+					$(this).parent().next().html('&yen;'+result);
+					TotalPrice();
+				})
+				
+				
+				
+				
+				
+			// 滚动条
+			/*使用JavaScript来实现*/
+			 
+			var  menuHeight = document.getElementById('menu');
+			 
+			var  screenHeight = window.innerHeight  //浏览器窗口的内部高度
+			/* var  screenHeight =  document.documentElement.clientHeight; */
+			menuHeight.style.height=screenHeight-80+"px";
+			 
+			 
+			/*使用jQuery来实现*/
+			 
+			/****方法一****/
+			$('.menu').height($(window).height()-80);
+			 
+			 /****方法二****/
+			$('.menu').css("height",$(window).height()-80);
+			</script>
+	<!-- ！！ -->
+	</div>
+		
+		
+		
+	
+	
+
+</body>
+</html>

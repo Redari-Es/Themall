@@ -1,0 +1,86 @@
+{{{if .Islogin}}}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>详情页</title>
+		<link rel="stylesheet" type="text/css" href="/static/kouh/style.css" />
+		<link rel="stylesheet" type="text/css" href="/static/kouh/bootstrap/css/bootstrap.min.css" />
+		<script type="text/javascript" src="/static/kouh/js/jquery-3.6.0.min.js"></script>
+		<script src="/static/kouh/bootstrap/js/bootstrap.min.js"></script>
+		{{{template "base/link.html" .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		}}}
+	</head>
+	<body>
+		{{{template "base/navbar.html" .}}}
+		<div class="section dwo full-height px-4 px-sm-0">
+			<div class="container">
+				<div class="row full-height justify-content-center">
+					<div class="col-lg-12 col-xl-4 align-self-center padding-tb">
+						<div class="section mx-auto text-center slider-height-padding">
+							<span
+								><h1>烈艳蓝金唇膏</h1>
+								<hr />
+								<p>
+									高订色泽 4款妆效: 丝绒、缎光、哑光、鎏金 花萃润护 舒悦持色 替换芯供选购
+									aria_filterSkusByTags
+								</p>
+							</span>
+							<input class="checkbox frst" type="radio" id="slider-1" name="slider" checked />
+							<label for="slider-1" style="left: 500px"></label>
+							<input class="checkbox scnd" type="radio" name="slider" id="slider-2" />
+							<label for="slider-2" style="left: 500px"></label>
+							<input class="checkbox thrd" type="radio" name="slider" id="slider-3" />
+							<label for="slider-3" style="left: 500px"></label>
+							<input class="checkbox foth" type="radio" name="slider" id="slider-4" />
+							<label for="slider-4" style="left: 500px"></label>
+							<ul>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+							<button id="btn1" class="btn btn-primary btn-lg">加入购物车</button>
+							<button id="btn2" class="btn btn-warning btn-lg">立即购买</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{{{template "base/footer.html" .}}} {{{template "base/src.html" .}}}
+	</body>
+</html>
+
+{{{else}}}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>mall</title>
+	</head>
+	<body>
+		<a href="login" target="_self">重新登录</a>
+		{{{.errmsg}}}
+	</body>
+</html>
+
+{{{end}}}

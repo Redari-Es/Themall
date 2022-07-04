@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="/static/contact/contact.css" rel="stylesheet" />
+		{{{template "base/link.html"
+
+
+
+
+		}}}
+		<title>Document</title>
+	</head>
+	<body>
+		{{{template "base/navbar.html" .}}}
+		<header class="header">
+			<h1>Contact Us</h1>
+		</header>
+		<div class="wrapper">
+			<form method="post" action="" class="form">
+				<div class="field-prepend">
+					<input class="formfield" type="text" placeholder="Full Name" required />
+				</div>
+				<div class="field-prepend">
+					<input class="formfield" type="text" placeholder="Email" required />
+				</div>
+				<div class="field-prepend">
+					<input class="formfield" type="text" placeholder="Phone" />
+				</div>
+				<div class="field-prepend">
+					<input class="formfield" type="text" placeholder="Subject" required />
+				</div>
+				<div class="field-prepend">
+					<textarea
+						class="formfield"
+						name="comments"
+						rows="8"
+						placeholder="Message"
+						required
+					></textarea>
+				</div>
+				<div class="field-prepend">
+					<input class="btn" type="submit" value="Submit" />
+				</div>
+			</form>
+		</div>
+		{{{template "base/footer.html" .}}} {{{template "base/src.html" .}}}
+	</body>
+</html>

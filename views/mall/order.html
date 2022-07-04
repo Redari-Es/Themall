@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	    <meta name="generator" content="Hugo 0.88.1">	
+	    <!-- Bootstrap core CSS -->
+	{{{template "base/head.html" .}}}
+	{{{template "base/favicons.html" .}}}
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	    <style>
+	      .bd-placeholder-img {
+	        font-size: 1.125rem;
+	        text-anchor: middle;
+	        -webkit-user-select: none;
+	        -moz-user-select: none;
+	        user-select: none;
+	      }
+	      @media (min-width: 768px) {
+	        .bd-placeholder-img-lg {
+	          font-size: 3.5rem;
+	        }
+	      }
+	    </style>
+	    <!-- Custom styles for this template -->
+	    <link rel="stylesheet" href="form-validation.css">
+	  </head>
+	  <div class="container">
+	  <body>
+			{{{template "base/navbar.html" .}}}
+	<div class="container">
+	  <main>
+	      <div class="col-md-12 col-lg-12">
+	        <h3 class="mb-3" align="center">填写地址</h3>
+					<hr>
+					<!-- TODO: 表单order  <24-12-21, Redari-Es> -->
+	        <form class="needs-validation" novalidate>
+	          <div class="row g-3">
+				<div class="row">
+	            <div class="col-sm-6">
+	              <label for="username" class="form-label">姓名</label>
+	                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+	              <div class="invalid-feedback">
+	                  请输入姓名
+	                </div>
+	            </div>
+				<div class="col-md-6">
+				  <label for="username" class="form-label">手机号码</label>
+				    <input type="text" class="form-control" id="telephone" name="phone" placeholder="telephone" required>
+				  <div class="invalid-feedback">
+				      请输入手机号
+				    </div>
+				  </div>
+				</div>
+				<hr class="my-4">
+				<div class="row">
+	            <div class="col-md-6">
+	              <label for="email" class="form-label">邮箱<span class="text-muted">(Optional)</span></label>
+	              <input type="email" class="form-control" id="email" name="email" placeholder="例:you@example.com">
+	              <div class="invalid-feedback">
+					地址选填
+	              </div>
+	            </div>
+	            <div class="col-sm-6">
+	              <label for="address" class="form-label">地址</label>
+	              <input type="text" class="form-control" id="address" name="address" placeholder="省/市/镇/县" required>
+	              <div class="invalid-feedback">
+	                请输入你的地址
+	              </div>
+	            </div>
+				</div>
+	          <hr class="my-4">
+	          <h4 class="mb-3">支付</h4>
+	          <div class="row">
+	            <div class="form-check col-sm-4">
+	              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+	              <label class="form-check-label" for="credit">支付宝支付</label>
+	            </div>
+	            <div class="form-check col-sm-4">
+	              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+	              <label class="form-check-label" for="debit">微信支付</label>
+	            </div>
+	            <div class="form-check col-sm-4">
+	              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+	              <label class="form-check-label" for="paypal">银行卡</label>
+	            </div>
+	          </div>
+	          </div>
+	          <hr class="my-4">
+			  <div class="col-md-5"></div>
+	          <button class="w-100 btn btn-primary col-md-2" type="submit">提交订单</button>
+			</form>
+	  </main>
+	
+	</div>
+	{{{template "base/src.html" .}}}
+	{{{template "base/footer.html" .}}}
+	  </body>
+</html>

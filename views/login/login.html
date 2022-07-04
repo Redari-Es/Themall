@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>登录注册</title>
+		<link rel="stylesheet" type="text/css" href="/static/login/css/login.css" />
+		<style type="text/css" media="screen">
+			#ani {
+				width: 100%;
+				transition: width 0.4s ease-in-out;
+			}
+			#ani:hover {
+				width: 80%;
+			}
+			#vali {
+				width: 50%;
+				transition: width 0.4s ease-in-out;
+			}
+			#vali:hover {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div class="container">
+				<!-- TODO: Signin  <22-12-21, Redari-Es> -->
+				<div class="user signinBx">
+					<div class="imgBx"><img src="/static/login/img/login1.jpg" /></div>
+					<div class="formBx">
+						<form action="signin" method="post" accept-charset="utf-8">
+							<h2>Sign In</h2>
+							<input type="text" id="ani" name="username" placeholder="Username" />
+							<input type="password" id="ani" name="password" placeholder="Password" />
+							<input
+								type="text"
+								id="vali"
+								name="vali"
+								placeholder="请输入验证码:          {{{.vali}}}"
+							/>
+							<p>
+								<span>{{{.errmsg}}}</span>
+							</p>
+							<input type="submit" value="Login" />
+							<p class="signup">
+								don't have an account ? <a href="#" onclick="toggleForm();">sign up</a>
+							</p>
+						</form>
+					</div>
+				</div>
+				<!-- TODO: Signup  <22-12-21, Redari-Es> -->
+				<div class="user signupBx">
+					<div class="formBx">
+						<form action="signup" method="post" accept-charset="utf-8">
+							<h2>Create an account</h2>
+							<input type="text" id="ani" name="username" placeholder="Username" />
+							<input type="text" id="ani" name="email" placeholder="Email" />
+							<input type="password" id="ani" name="password" placeholder="Create Password" />
+							<input type="password" id="ani" name="repassword" placeholder="Confirm Password" />
+
+							<p>
+								<span>{{{.msg}}}</span>
+							</p>
+							<input type="submit" value="Sign Up" />
+							<p class="signup">
+								Already have an account ? <a href="#" onclick="toggleForm();">sign in</a>
+							</p>
+						</form>
+					</div>
+					<div class="imgBx"><img src="/static/login/img/login2.jpg" /></div>
+				</div>
+			</div>
+		</section>
+		<script>
+			function toggleForm() {
+				section = document.querySelector("section");
+				container = document.querySelector(".container");
+				container.classList.toggle("active");
+				section.classList.toggle("active");
+			}
+		</script>
+	</body>
+</html>
